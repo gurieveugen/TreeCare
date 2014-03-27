@@ -43,7 +43,7 @@
 			<div class="left">
 				<img src="<?php echo TDU; ?>/images/img-member-isa.png" alt="image description">
 				<div class="text">
-					<a href="#"><strong>Servicing</strong> <br>metro and rural <br>locations</a>
+					<a href="<?php bloginfo('url'); ?>"><strong>Servicing</strong> <br>metro and rural <br>locations</a>
 				</div>
 			</div>
 			<?php if(is_front_page()): ?>
@@ -69,27 +69,4 @@
 				)); 
 			?>	
 		</nav>
-		
-		<!-- <nav id="nav">
-			<ul id="hover">
-				<li><a href="#">Homepage</a></li>
-				<li>
-					<a href="#"><span>Our</span> Company</a>
-					<div class="children">
-						<div class="li"><a href="#">About Us</a></div>
-						<div class="li"><a href="#">Our Vision</a></div>
-						<div class="li">
-							<a href="#">Organisational Structure</a>
-							<div class="children2">
-								<div class="li"><a href="#">About Us</a></div>
-								<div class="li"><a href="#">Our Vision</a></div>
-							</div>
-						</div>
-						<div class="li"><a href="#">Insurance</a></div>
-					</div>
-				</li>
-				<li><a href="#"><span>Our</span> Equipment</a></li>
-				<li><a href="#"><span>Our</span> Experience</a></li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
-		</nav> -->
+	

@@ -27,8 +27,8 @@ jQuery(function(){
     // Featured widget
     // =========================================================
     jQuery('.widget-featured .box').hover(
-    	function(){ jQuery(this).find('.text').fadeIn('slow'); },
-    	function(){ jQuery(this).find('.text').fadeOut('slow'); });
+    	function(){ jQuery(this).find('.text').stop(true, true).fadeIn('slow'); },
+    	function(){ jQuery(this).find('.text').stop(true, true).fadeOut('slow'); });
     // =========================================================
     // Carousel
     // =========================================================
