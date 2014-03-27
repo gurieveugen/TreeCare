@@ -6,6 +6,7 @@
 ?>
 
 <?php get_header(); ?>
+<?php $options = $GLOBALS['gcoptions']->getAllOptions(); ?>
 
 <div class="widget-featured cf">
 	<div class="box">
@@ -28,26 +29,25 @@
 <div class="main-home">
 	<div class="scroll-banner">
 		<ul class="slides cf">
-			<li class="green-box"><a href="#">Tree <br>removal <br>services</a></li>
-			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-3.jpg" alt="image description"></a></li>
+			<li>
+				<a href="#">
+					<img src="<?php echo TDU; ?>/images/img-3.jpg" alt="image description">
+					<span class="text"><span class="holder"><span>Tree <br>removal <br>services</span></span></span>
+				</a>
+			</li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-4.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-5.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-6.jpg" alt="image description"></a></li>
-			<li class="green-box"><a href="#">Land <br>Clearance <br>services</a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-7.jpg" alt="image description"></a></li>
-			<li class="green-box"><a href="#">Tree <br>removal <br>services</a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-3.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-4.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-5.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-6.jpg" alt="image description"></a></li>
-			<li class="green-box"><a href="#">Land <br>Clearance <br>services</a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-7.jpg" alt="image description"></a></li>
-			<li class="green-box"><a href="#">Tree <br>removal <br>services</a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-3.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-4.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-5.jpg" alt="image description"></a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-6.jpg" alt="image description"></a></li>
-			<li class="green-box"><a href="#">Land <br>Clearance <br>services</a></li>
 			<li><a href="#"><img src="<?php echo TDU; ?>/images/img-7.jpg" alt="image description"></a></li>
 		</ul>
 	</div>
@@ -78,15 +78,29 @@
 			<h2>Contact Us</h2>
 			<div class="info">
 				<span>Phone:</span>
-				<strong>9317 3213</strong>
+				<strong><?php echo $options['phone']; ?></strong>
 				<span>Email:</span>
-				<strong><a href="mailto:admin@treecarewa.com.au">admin@treecarewa.com.au</a></strong>
+				<strong><a href="mailto:<?php echo $options['email']; ?>"><?php echo $options['email']; ?></a></strong>
 				<span>Afterhours:</span>
-				<strong>0412 441 811</strong>
+				<strong><?php echo $options['afterhours']; ?></strong>
 			</div>
 		</div>
 		<div class="two-columns cf">
-			<ul class="column">
+			<?php 
+			wp_nav_menu( array(
+				'container'      => '',
+				'menu_id'        => 'column',
+				'menu_class'     => 'column',
+				'theme_location' => 'footer_left_menu'
+				)); 
+			wp_nav_menu( array(
+				'container'      => '',
+				'menu_id'        => 'column',
+				'menu_class'     => 'column',
+				'theme_location' => 'footer_right_menu'
+				)); 
+			?>	
+			<!-- <ul class="column">
 				<li><a href="#">REMOVAL &amp; PRUNING</a></li>
 				<li><a href="#">TREE SURGERY</a></li>
 				<li><a href="#">PALM PRUNING AND REMOVAL</a></li>
@@ -101,7 +115,7 @@
 				<li><a href="#">WESTERN POWER CERTIFIED</a></li>
 				<li><a href="#">COUNCIL &amp; GOVERNMENT CONTRACTOR</a></li>
 				<li><a href="#">METRO &amp; RURAL LOCATIONS</a></li>
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 </div>

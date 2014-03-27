@@ -628,6 +628,18 @@ h1 a:hover{
 .widget-featured .box:first-child{
 	margin:0;
 }
+.widget-featured .box .overlay{
+	background:url(images/bg-transparent-white.png);
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	display:none;
+}
+.widget-featured .box:hover .overlay{
+	display:block;
+}
 .widget-featured .box .text{
 	background:url(images/bg-transparent-white.png);
 	position:absolute;
@@ -636,6 +648,7 @@ h1 a:hover{
 	left:21px;
 	padding:4px 23px 5px 10px;
 	text-align:right;
+	display: none;
 }
 .widget-featured .box .text:after{
 	content:'';
@@ -675,31 +688,54 @@ h1 a:hover{
 .scroll-banner{
 	overflow:hidden;
 	margin:0 0 24px;
+	position: relative;
 }
 .scroll-banner ul{
 	padding:0;
 	margin:0;
 	list-style:none;
 	width:99999px;
+	position: relative;
 }
 .scroll-banner ul li{
 	float:left;
 	margin:0 10px 0 0;
+	position:relative;
 }
-.scroll-banner ul .green-box{
+.scroll-banner ul li .text{
 	background:#007530;
-	display:table;
-	height:106px;
-	width:113px;
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	padding:5px 10px;
+	text-align:right;
+	color:#fff;
 	text-transform:uppercase;
 	font:12px/15px Helvetica, Arial, sans-serif;
 }
+.scroll-banner ul li .text .holder{
+	display:table;
+	width:100%;
+	height:100%;
+}
+.scroll-banner ul li:hover .text{
+	display:block;
+}
+.scroll-banner ul li .text span{
+	display:table-cell;
+	vertical-align:middle;
+}
+.scroll-banner ul .green-box{
+	display:table;
+	height:106px;
+	width:113px;
+}
 .scroll-banner ul .green-box a{
 	display:table-cell;
-	padding:5px 10px;
 	vertical-align:middle;
-	text-align:right;
-	color:#fff;
 }
 .scroll-banner ul li img{
 	display:block;

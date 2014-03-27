@@ -23,4 +23,17 @@ jQuery(function(){
 		  }
 		);
     });
+    // =========================================================
+    // Featured widget
+    // =========================================================
+    jQuery('.widget-featured .box').hover(
+    	function(){ jQuery(this).find('.text').fadeIn('slow'); },
+    	function(){ jQuery(this).find('.text').fadeOut('slow'); });
+    // =========================================================
+    // Carousel
+    // =========================================================
+    jQuery('.scroll-banner').jcarousel({wrap: 'circular'}).jcarouselAutoscroll({
+        interval: 3000,
+        target: '+=1',
+        autostart: true });
 });
