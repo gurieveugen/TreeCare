@@ -656,6 +656,8 @@ h1 a:hover{
 	padding:4px 23px 5px 10px;
 	text-align:right;
 	display: none;
+	-webkit-box-shadow: 3px 3px 4px 0 #222;
+	box-shadow: 3px 3px 4px 0 #222;
 }
 .widget-featured .box .text:after{
 	content:'';
