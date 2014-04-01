@@ -12,6 +12,8 @@ define('TDU', get_bloginfo('template_url'));
 require_once 'includes/custom_walker.php';
 require_once 'includes/page_theme_options.php';
 require_once 'includes/widget_featured_posts.php';
+require_once 'includes/widget_link_list.php';
+require_once 'includes/widget_button.php';
 // =========================================================
 // HOOKS
 // =========================================================
@@ -46,6 +48,13 @@ register_sidebar(array(
 register_sidebar(array(
 	'id'            => 'front-page-sidebar',
 	'name'          => 'Front page Sidebar',
+	'before_widget' => '<div class="%2$s" id="%1$s">',
+	'after_widget'  => '</div>'
+));
+
+register_sidebar(array(
+	'id'            => 'availabl-equipment',
+	'name'          => 'Available Equipment Sidebar',
 	'before_widget' => '<div class="%2$s" id="%1$s">',
 	'after_widget'  => '</div>'
 ));
