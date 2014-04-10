@@ -11,6 +11,7 @@ define('TDU', get_bloginfo('template_url'));
 // =========================================================
 require_once 'includes/custom_walker.php';
 require_once 'includes/page_theme_options.php';
+require_once 'includes/post_type_slider.php';
 require_once 'includes/widget_featured_posts.php';
 require_once 'includes/widget_link_list.php';
 require_once 'includes/widget_button.php';
@@ -201,57 +202,6 @@ function getTitle()
 	$title = wp_title('|', false, 'right');
 	$title = ($title == '') ? get_bloginfo('site') : $title;
 	return $title; 
-}
-
-/**
- * Get posts to scroll control
- * @param  array   $settings 
- * @param  boolean $print    
- * @return mixed
- */
-function getPostsScroll($settings = array(), $print = false)
-{
-	$default_settings = array(
-		'container'       => 'ul',
-		'container_class' => array('slides', 'cf'),
-		'container_item'  => 'li',
-		'text_before'     => '<span class="text"><span class="holder"><span>',
-		'text_after'      => '</span></span></span>');
-	$args 			 = array(
-		'posts_per_page'   => 500,
-		'offset'           => 0,
-		'category'         => '',
-		'orderby'          => 'post_date',
-		'order'            => 'DESC',
-		'include'          => '',
-		'exclude'          => '',
-		'meta_key'         => '',
-		'meta_value'       => '',
-		'post_type'        => 'post',
-		'post_status'      => 'publish',
-		'suppress_filters' => true,
-		'fields'		   => 'ids' );
-
-	$settings = array_merge($default_settings, $settings);
-	$posts    = get_posts($args);
-
-	$output = '<'.$settings['container'].' class="'.implode(' ', $settings['container_class']).'">';
-	foreach ($posts as &$value) 
-	{
-		if(has_post_thumbnail($value))
-		{
-			$title  = get_the_title($value);
-			$link   = get_permalink($value);
-			$output.= '<'.$settings['container_item'].'><a href="'.$link.'" title="'.$title.'">';
-			$output.= get_the_post_thumbnail($value, 'small-post-thumbnail');
-			$output.= $settings['text_before'].$title.$settings['text_after'];
-			$output.= '</a></'.$settings['container_item'].'>';
-		}
-	}
-	$output.= '</'.$settings['container'].'>';
-
-	if($print) echo $output;
-	else return $output;
 }
 
 function getShort($txt)

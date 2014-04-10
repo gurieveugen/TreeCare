@@ -19,7 +19,7 @@
 ?>
 <div class="main-home">
 	<div class="scroll-banner">
-		<?php echo getPostsScroll(); ?>		
+		<?php echo $GLOBALS['slider']->getSlider(); ?>		
 	</div>
 	<div class="posts-block cf">
 		<article class="block">
