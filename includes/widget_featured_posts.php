@@ -48,7 +48,7 @@ class FeaturedPosts extends WP_Widget {
 			<?php echo $img_right; ?>
 			<div class="text">
 				<h3><span><?php echo $title_right; ?></span> <?php echo $subtitle_right; ?></h3>
-				<a href="<?php echo get_permalink($id_left); ?>" class="more">View More</a>
+				<a href="<?php echo get_permalink($id_right); ?>" class="more">View More</a>
 			</div>
 		</div>
 		<?php

@@ -32,8 +32,12 @@ jQuery(function(){
     // =========================================================
     // Carousel
     // =========================================================
-    jQuery('.scroll-banner').jcarousel({wrap: 'circular'}).jcarouselAutoscroll({
-        interval: 3000,
-        target: '+=1',
+    jQuery('.scroll-banner').jcarousel({
+    	wrap: 'circular',
+    	easing: 'linear',
+        animation: 70000
+    }).jcarouselAutoscroll({
+        interval: 0,
+        target: '+=9',
         autostart: true });
 });

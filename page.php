@@ -21,7 +21,7 @@
 <?php endwhile; ?>
 	</article>
 	<div class="footer-area">
-		<h2>Available Equipment</h2>
+		<h2>Services and Equipment</h2>
 		<?php if(is_active_sidebar('availabl-equipment')) dynamic_sidebar('availabl-equipment'); ?>		
 	</div>
 </div>
