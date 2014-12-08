@@ -1008,3 +1008,39 @@ h1 a:hover{
 	border-radius:3px;
 	color:#fff;
 }
+.equipments-content{
+	padding: 0 0 27px;
+}
+.equipment-list{
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+}
+.equipment-list li{
+	float: left;
+	width: 211px;
+	margin-left: 35px;
+	padding: 0 0 24px;
+	border-bottom: 1px solid #dbdbdb;
+}
+.equipment-list li:first-child{
+	margin-left: 0;
+}
+.equipment-list h3{
+	font: bold 17px/20px Helvetica, Arial, sans-serif !important;
+	margin: 0 0 13px !important;
+}
+.equipment-list h3 a{
+	color: #007530;
+}
+.equipment-list h3 a:hover{
+	text-decoration: none;
+}
+.equipment-list img{
+	display: block;
+}
+
+
+
+
+

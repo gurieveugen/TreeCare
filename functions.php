@@ -15,6 +15,7 @@ require_once 'includes/post_type_slider.php';
 require_once 'includes/widget_featured_posts.php';
 require_once 'includes/widget_link_list.php';
 require_once 'includes/widget_button.php';
+require_once 'includes/__.php';
 // =========================================================
 // HOOKS
 // =========================================================
@@ -24,6 +25,7 @@ add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 604, 270, true );
 add_image_size('single-post-thumbnail', 400, 9999, false);
 add_image_size('small-post-thumbnail', 150, 100, false);
+add_image_size('equipment', 211, 129, false);
 add_action('wp_enqueue_scripts', 'scripts_method');
 add_filter('nav_menu_css_class', 'change_menu_classes');
 add_filter('the_content', 'filter_template_url');
@@ -70,6 +72,34 @@ register_nav_menus( array(
 	'footer_left_menu'  => __( 'Footer Left column Menu', 'theme' ),
 	'footer_right_menu' => __( 'Footer Right column Menu', 'theme' )
 ) );
+// ==============================================================
+// Create control collections
+// ==============================================================
+$cc_equipment_cat = new \Controls\ControlsCollection(
+	array(
+		new \Controls\Media('Category image')
+	)
+);
+// ==============================================================
+// Create post types
+// ==============================================================
+$our_equipment = new \Admin\PostType(
+	'Equipment', 
+	array('icon_code' => 'f0d1')
+);
+// ==============================================================
+// Create taxonomies
+// ==============================================================
+$out_equipment_cat = new \Admin\Taxonomy(
+	'Equipment cat', 
+	array('post_type' => 'equipment'),
+	$cc_equipment_cat
+);
+
+// ==============================================================
+// Shortcode class
+// ==============================================================
+$our_equipments = new OurEquipments();
 
 function change_menu_classes($css_classes)
 {
