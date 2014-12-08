@@ -14,12 +14,7 @@
 		<h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 		<div class="entry-content">
 			<?php
-				if(strpos($post->post_content, '<!--more-->'))
-					the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'theme' ) );
-				else {
-					the_excerpt();
-				}
-				
+				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'theme' ) );
 				wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'theme' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) );
 			?>
 		</div>
